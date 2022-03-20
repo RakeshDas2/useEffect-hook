@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import UseEffect1 from './components/UseEffect1';
+import UseEffect2 from './components/UseEffect2';
+import UseEffect3 from './components/UseEffect3';
+import UseEffect4 from './components/UseEffect4';
 
 function App() {
+  const[showComponent,setShowComponent]=useState(true)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {/* <UseEffect1/> */}
+     <button onClick={()=>{
+       setShowComponent(!showComponent)
+     }}>{showComponent?'Hide':'Show'} Component</button>
+     {/* {showComponent?<UseEffect2/>:null}
+     <UseEffect3/> */}
+     <UseEffect4 showComponent={showComponent}/>
     </div>
   );
 }
